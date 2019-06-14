@@ -2,16 +2,25 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const uuid = require('uuid');
-const users = require('../../Users');
+const users = require('../../UsersJS');
+const fs = require('fs');
+
 
 //GET lista di users
-router.get('/', (req, res) => {
-    //return res.send(Object.values(users));
-    res.json(users);
+router.get('/', async (req, res) => {
+
+
+    fs.readFile('UsersJSON.json', { encoding: 'utf-8' }, function (err, file) {
+        res.json(file);
+        console.log(file);
+    });
+
+    //return res.send(Object.values(users))
+    //res.json(users);
 });
 
 //GET lista di users by :ID 
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
 
     //some ritorna vero o falso
     const found = users.some(user => user.id === parseInt(req.params.id));
@@ -28,14 +37,23 @@ router.get('/:id', (req, res) => {
 //POST di un utente
 //uso un middleware  nell'index body-parse CHE RICHIAMO PRIMA DELLE ROUTES 
 router.post('/', (req, res) => {
+
     const newuser = {
         id: uuid.v4(),
         username: req.body.username
     }
 
+var obj = JSON.parse(users);
 
-    users.push(newuser);
-    res.json(users);
+    fs.appendFile('UsersJSON.json', newuser, function (err, file) {
+
+        res.json(obj);
+        console.log(obj);
+
+    })
+
+    //users.push(newuser);
+    //res.json(users);
 
 });
 
