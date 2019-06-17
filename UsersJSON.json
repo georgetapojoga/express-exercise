@@ -1,10 +1,18 @@
 [
   {
-      "id": 2,
-      "username": "Nina Dobrev"
+    "id": 1,
+    "username": "Ian Somerhalder"
   },
   {
-      "id": "63383d41-d330-45db-ae06-e182e76fcf31",
-      "username": "ciccio pasticcio"
+    "id": 2,
+    "username": "Paul Wesley"
+  },
+  {
+    "id": 3,
+    "username": "Nina Dobrev"
+  },
+  {
+    "id": "63383d41-d330-45db-ae06-e182e76fcf31",
+    "username": "ciccio pasticcio"
   }
 ]

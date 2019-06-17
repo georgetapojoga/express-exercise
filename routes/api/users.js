@@ -48,7 +48,7 @@ var obj = JSON.parse(users);
     fs.appendFile('UsersJSON.json', newuser, function (err, file) {
 
         res.json(obj);
-        console.log(obj);
+        console.log(obj); 
 
     })
 
