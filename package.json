@@ -18,7 +18,7 @@
   "homepage": "https://github.com/georgetapojoga/express-exercise#readme",
   "dependencies": {
     "body-parse": "^0.1.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "filejson": "^1.0.15",
     "fs": "0.0.1-security",
     "jsonfile": "^5.0.0",
